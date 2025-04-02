@@ -1,0 +1,189 @@
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+    <div class="container">
+        <div class="flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <span
+                    class="text-aula-green font-display text-2xl font-bold md:text-3xl"
+                >
+                    Gimnasio Infantil
+                </span>
+                <span
+                    class="text-aula-pink font-display text-2xl font-bold md:text-3xl"
+                >
+                    Aula Mágica
+                </span>
+            </div>
+
+            <!-- Contact info (visible on medium screens and up) -->
+            <div class="hidden items-center md:flex">
+                <a
+                    href="tel:3102561450"
+                    class="text-aula-dark hover:text-aula-green flex items-center transition-colors"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="mr-2"
+                        ><path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                        ></path></svg
+                    >
+                    <span class="font-medium">310 256 1450</span>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    {
+                        [
+                            'Inicio',
+                            'Nosotros',
+                            'Actividades',
+                            'Precios',
+                            'Contacto',
+                        ].map((item) => (
+                            <li>
+                                <a
+                                    href={`#${item.toLowerCase()}`}
+                                    class="text-aula-dark hover:text-aula-green font-medium transition-colors"
+                                >
+                                    {item}
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </nav>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="text-aula-dark md:hidden">
+                <svg
+                    id="menu-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class=""
+                    ><line x1="4" x2="20" y1="12" y2="12"></line><line
+                        x1="4"
+                        x2="20"
+                        y1="6"
+                        y2="6"></line><line x1="4" x2="20" y1="18" y2="18"
+                    ></line></svg
+                >
+                <svg
+                    id="close-icon"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="hidden"
+                    ><path d="M18 6 6 18"></path><path d="m6 6 12 12"
+                    ></path></svg
+                >
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-nav" class="hidden bg-white py-4 pb-6 md:hidden">
+            <ul class="flex flex-col space-y-4">
+                {
+                    [
+                        'Inicio',
+                        'Nosotros',
+                        'Actividades',
+                        'Precios',
+                        'Contacto',
+                    ].map((item) => (
+                        <li>
+                            <a
+                                href={`#${item.toLowerCase()}`}
+                                class="text-aula-dark hover:text-aula-green block font-medium transition-colors"
+                            >
+                                {item}
+                            </a>
+                        </li>
+                    ))
+                }
+                <li>
+                    <a
+                        href="tel:3102561450"
+                        class="text-aula-dark hover:text-aula-green flex items-center transition-colors"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="20"
+                            height="20"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="mr-2"
+                            ><path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                            ></path></svg
+                        >
+                        <span class="font-medium">310 256 1450</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<script>
+    // JavaScript para controlar el menú móvil
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileNav = document.getElementById('mobile-nav');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (mobileMenuButton && mobileNav && menuIcon && closeIcon) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileNav.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Cerrar menú al hacer clic en un enlace
+            const mobileLinks = mobileNav.querySelectorAll('a');
+            mobileLinks.forEach((link) => {
+                link.addEventListener('click', () => {
+                    mobileNav.classList.add('hidden');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                });
+            });
+        }
+    });
+</script>
+
+<style>
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+</style>

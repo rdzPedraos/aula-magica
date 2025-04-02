@@ -1,0 +1,196 @@
+---
+const plans = [
+    {
+        title: 'Jornada Mañana',
+        price: '$200.000',
+        color: 'bg-aula-blue',
+        popular: false,
+        features: [
+            'Horario de 7:00 am a 12:00 m',
+            'Actividades Montessori',
+            'Música y danza',
+            'Club de lectura',
+            'Inglés integrado',
+        ],
+    },
+    {
+        title: 'Jornada Continua',
+        price: '$350.000',
+        color: 'bg-aula-green',
+        popular: true,
+        features: [
+            'Horario de 7:00 am a 5:00 pm',
+            'Todas las actividades Montessori',
+            'Todas las actividades extracurriculares',
+            'Descanso supervisado',
+            'Tiempo para tareas y refuerzo',
+        ],
+    },
+    {
+        title: 'Jornada Tarde',
+        price: '$180.000',
+        color: 'bg-aula-pink',
+        popular: false,
+        features: [
+            'Horario de 2:00 pm a 5:00 pm',
+            'Actividades Montessori',
+            'Yoga para niños',
+            'Arte y creatividad',
+            'Juego estructurado',
+        ],
+    },
+];
+
+const additionals = [
+    {
+        title: 'Almuerzo',
+        price: '$100.000',
+        description:
+            'Menú balanceado, preparado con ingredientes frescos y nutritivos',
+    },
+    {
+        title: 'Refrigerio',
+        price: '$70.000',
+        description:
+            'Snacks saludables para mantener la energía durante el día',
+    },
+];
+---
+
+<section id="precios" class="section-padding bg-white">
+    <div class="container">
+        <h2 class="section-title">Nuestros Precios</h2>
+
+        <div
+            class="bg-aula-yellow bg-opacity-20 mx-auto mb-12 max-w-3xl rounded-xl p-4 text-center md:p-6"
+        >
+            <p
+                class="flex items-center justify-center text-lg font-medium md:text-xl"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="#eab308"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="mr-2 text-yellow-600"
+                    ><polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon></svg
+                >
+                <span
+                    >Promoción: Matrículas abiertas con 100% de descuento en el
+                    primer mes</span
+                >
+            </p>
+        </div>
+
+        <div class="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+            {
+                plans.map((plan) => (
+                    <div
+                        class={`relative overflow-hidden rounded-xl ${
+                            plan.popular
+                                ? 'ring-aula-green ring-opacity-60 transform shadow-xl ring-2 md:-translate-y-4'
+                                : 'shadow-lg'
+                        } bg-white transition-all hover:shadow-xl`}
+                    >
+                        {plan.popular && (
+                            <div class="bg-aula-green absolute top-0 right-0 left-0 py-1 text-center">
+                                <span class="text-sm font-medium text-white">
+                                    Más popular
+                                </span>
+                            </div>
+                        )}
+
+                        <div
+                            class={`${plan.color} bg-opacity-30 px-4 pt-6 pb-6 text-center`}
+                        >
+                            <h3 class="font-display text-aula-dark text-2xl font-bold">
+                                {plan.title}
+                            </h3>
+                            <div class="mt-4 mb-2">
+                                <span class="text-aula-dark text-4xl font-bold">
+                                    {plan.price}
+                                </span>
+                                <span class="text-gray-600">/mes</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6">
+                            <ul class="space-y-4">
+                                {plan.features.map((feature) => (
+                                    <li class="flex items-start">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="18"
+                                            height="18"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            class="mt-1 mr-2 flex-shrink-0 text-green-500"
+                                        >
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>
+                                        <span class="text-gray-700">
+                                            {feature}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+
+                            <a
+                                href="#contacto"
+                                class="btn-primary mt-8 block w-full text-center"
+                            >
+                                Solicitar información
+                            </a>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="mx-auto max-w-4xl rounded-xl bg-gray-50 p-6 md:p-8">
+            <h3
+                class="font-display text-aula-dark mb-6 text-center text-2xl font-bold"
+            >
+                Servicios Adicionales
+            </h3>
+
+            <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                {
+                    additionals.map((item) => (
+                        <div class="rounded-lg bg-white p-5 shadow-md transition-shadow hover:shadow-lg">
+                            <div class="mb-3 flex items-center justify-between">
+                                <h4 class="text-aula-dark text-lg font-bold">
+                                    {item.title}
+                                </h4>
+                                <span class="text-aula-dark text-lg font-bold">
+                                    {item.price}
+                                    <span class="text-sm text-gray-600">
+                                        /mes
+                                    </span>
+                                </span>
+                            </div>
+                            <p class="text-gray-700">{item.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        max-width: 1200px;
+    }
+</style>

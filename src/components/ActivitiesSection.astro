@@ -1,0 +1,100 @@
+---
+const activities = [
+    {
+        title: 'Música y Danza',
+        description:
+            'Desarrollamos la expresión corporal, el ritmo y la coordinación a través de la música y el movimiento.',
+        icon: 'music',
+        color: 'bg-aula-purple',
+    },
+    {
+        title: 'Yoga para Niños',
+        description:
+            'Actividades que promueven la relajación, concentración y consciencia corporal adaptadas para los más pequeños.',
+        icon: 'leaf',
+        color: 'bg-aula-green',
+    },
+    {
+        title: 'Club de Lectura',
+        description:
+            'Fomentamos el amor por los libros y desarrollamos la comprensión lectora desde temprana edad.',
+        icon: 'book',
+        color: 'bg-aula-blue',
+    },
+    {
+        title: 'Inglés Integrado',
+        description:
+            'Introducimos el inglés de manera natural en las actividades diarias para que los niños se familiaricen con el idioma.',
+        icon: 'languages',
+        color: 'bg-aula-pink',
+    },
+    {
+        title: 'Arte y Creatividad',
+        description:
+            'Exploramos diferentes técnicas artísticas que estimulan la creatividad y la expresión personal.',
+        icon: 'palette',
+        color: 'bg-aula-yellow',
+    },
+    {
+        title: 'Juego Estructurado',
+        description:
+            'Actividades lúdicas diseñadas para el desarrollo de habilidades sociales, emocionales y cognitivas.',
+        icon: 'users',
+        color: 'bg-aula-blue',
+    },
+];
+
+// Mapeo de iconos
+const icons = {
+    music: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>',
+    leaf: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path></svg>',
+    book: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
+    languages:
+        '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-600"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg>',
+    palette:
+        '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-yellow-600"><circle cx="13.5" cy="6.5" r=".5"></circle><circle cx="17.5" cy="10.5" r=".5"></circle><circle cx="8.5" cy="7.5" r=".5"></circle><circle cx="6.5" cy="12.5" r=".5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg>',
+    users: '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-teal-600"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>',
+};
+---
+
+<section id="actividades" class="section-padding relative bg-gray-50">
+    <div
+        class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"
+    >
+    </div>
+
+    <div class="relative z-10 container">
+        <h2 class="section-title">Nuestras Actividades</h2>
+        <p class="mx-auto mb-12 max-w-3xl text-center text-gray-700">
+            En Aula Mágica ofrecemos un programa educativo completo que incluye
+            actividades diseñadas para estimular todas las áreas del desarrollo
+            infantil.
+        </p>
+
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                activities.map((activity) => (
+                    <div class="card-shadow overflow-hidden rounded-xl bg-white p-6">
+                        <div
+                            class={`${activity.color} bg-opacity-20 mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full`}
+                        >
+                            <Fragment set:html={icons[activity.icon]} />
+                        </div>
+                        <h3 class="font-display text-aula-dark mb-3 text-center text-xl font-bold">
+                            {activity.title}
+                        </h3>
+                        <p class="text-center text-gray-700">
+                            {activity.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .container {
+        max-width: 1200px;
+    }
+</style>
