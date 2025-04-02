@@ -1,0 +1,207 @@
+@import 'tailwindcss';
+
+@layer theme, base, components, utilities;
+
+@theme {
+    /* Colores personalizados para el jardín infantil */
+    --color-aula-green: #a8e6cf;
+    --color-aula-yellow: #fef7cd;
+    --color-aula-blue: #d3e4fd;
+    --color-aula-pink: #ffdee2;
+    --color-aula-purple: #e5deff;
+    --color-aula-dark: #3d3d3d;
+
+    /* Fuentes */
+    --font-rounded: 'Quicksand', sans-serif;
+    --font-display: 'Baloo 2', cursive;
+
+    /* Animaciones */
+    --animation-float: float 3s ease-in-out infinite;
+    --animation-bounce: bounce 1s infinite;
+
+    /* Asegurar que las clases de color Tailwind funcionen con nuestros colores personalizados */
+    --color-blue-600: #2563eb;
+    --color-green-600: #16a34a;
+    --color-yellow-600: #ca8a04;
+    --color-red-600: #dc2626;
+    --color-pink-600: #db2777;
+    --color-purple-600: #9333ea;
+    --color-teal-600: #0d9488;
+}
+
+/* Definición de keyframes */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Estilos base */
+@layer base {
+    html {
+        font-family: var(--font-rounded);
+        color: var(--color-aula-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-display);
+        font-weight: bold;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+}
+
+/* Componentes personalizados */
+@layer components {
+    .btn-primary {
+        background-color: var(--color-aula-green);
+        color: var(--color-aula-dark);
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: color-mix(
+            in oklab,
+            var(--color-aula-green) 80%,
+            transparent
+        );
+    }
+
+    .btn-secondary {
+        background-color: white;
+        color: var(--color-aula-dark);
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: 9999px;
+        box-shadow:
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+        background-color: rgb(243 244 246);
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 5vw, 2.25rem);
+        font-family: var(--font-display);
+        font-weight: bold;
+        color: var(--color-aula-dark);
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .section-padding {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    @media (min-width: 768px) {
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    .card-shadow {
+        box-shadow:
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: box-shadow 0.3s;
+    }
+
+    .card-shadow:hover {
+        box-shadow:
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+}
+
+/* Utilidades personalizadas */
+@layer utilities {
+    .animate-float {
+        animation: var(--animation-float);
+    }
+
+    .animate-bounce {
+        animation: var(--animation-bounce);
+    }
+
+    .text-aula-green {
+        color: var(--color-aula-green);
+    }
+
+    .text-aula-yellow {
+        color: var(--color-aula-yellow);
+    }
+
+    .text-aula-blue {
+        color: var(--color-aula-blue);
+    }
+
+    .text-aula-pink {
+        color: var(--color-aula-pink);
+    }
+
+    .text-aula-purple {
+        color: var(--color-aula-purple);
+    }
+
+    .text-aula-dark {
+        color: var(--color-aula-dark);
+    }
+
+    .bg-aula-green {
+        background-color: var(--color-aula-green);
+    }
+
+    .bg-aula-yellow {
+        background-color: var(--color-aula-yellow);
+    }
+
+    .bg-aula-blue {
+        background-color: var(--color-aula-blue);
+    }
+
+    .bg-aula-pink {
+        background-color: var(--color-aula-pink);
+    }
+
+    .bg-aula-purple {
+        background-color: var(--color-aula-purple);
+    }
+
+    .bg-aula-dark {
+        background-color: var(--color-aula-dark);
+    }
+}
