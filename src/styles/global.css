@@ -1,6 +1,6 @@
 @import 'tailwindcss';
-
 @layer theme, base, components, utilities;
+@plugin "@midudev/tailwind-animations";
 
 @theme {
     --color-primary: #a54b1b;

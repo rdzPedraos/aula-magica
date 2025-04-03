@@ -15,19 +15,17 @@ import ArrowRightIcon from '@/icons/ArrowRightIcon.svg';
         class="absolute inset-0 -z-10 h-full w-full object-cover object-bottom"
     />
 
-    <div
-        class="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 transform animate-bounce"
+    <a
+        href="#nosotros"
+        class="absolute bottom-4 left-1/2 z-10 -translate-x-1/2 transform animate-bounce text-white opacity-70 transition-opacity hover:opacity-100"
     >
-        <a
-            href="#nosotros"
-            class="opacity-70 transition-opacity hover:opacity-100"
-        >
-            <ArrowDownIcon />
-        </a>
-    </div>
+        <ArrowDownIcon />
+    </a>
 
     <div class="container grid h-full grid-cols-1 gap-8 px-4 lg:grid-cols-2">
-        <div class="flex flex-col items-center self-center lg:items-start">
+        <div
+            class="animate-fade-in-right flex flex-col items-center self-center lg:items-start"
+        >
             <Logo class="h-64 w-64 text-white" />
 
             <p class="text-xl font-semibold text-white italic md:text-2xl">
@@ -57,15 +55,16 @@ import ArrowRightIcon from '@/icons/ArrowRightIcon.svg';
             <Image
                 src={Kids}
                 alt="Niños felices jugando"
-                class="h-full w-full object-cover"
+                class="animate-fade-in-up animate-delay-500 animate-duration-[1.5s] h-full w-full object-cover"
             />
 
             <div
-                class="bg-aula-yellow absolute -top-6 -right-6 z-0 h-24 w-24 rounded-full opacity-70"
+                class="bg-aula-yellow animate-jelly animate-delay-700 absolute -top-6 -right-6 z-0 h-24 w-24 rounded-full opacity-70"
             >
             </div>
+
             <div
-                class="bg-aula-pink absolute -bottom-6 -left-6 z-0 h-16 w-16 rounded-full opacity-70"
+                class="bg-aula-pink animate-jelly animate-delay-1000 absolute -bottom-6 -left-6 z-0 h-16 w-16 rounded-full opacity-70"
             >
             </div>
         </div>
