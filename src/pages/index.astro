@@ -48,4 +48,21 @@ import Footer from '@/sections/Footer.astro';
     elements.forEach((element) => {
         animation_observer.observe(element);
     });
+
+    const hrefElements = document.querySelectorAll('a[href^="#"]');
+
+    hrefElements.forEach((anchor: Element) => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const href = anchor.getAttribute('href') as string;
+            const target = document.querySelector(href);
+
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                });
+            }
+        });
+    });
 </script>
