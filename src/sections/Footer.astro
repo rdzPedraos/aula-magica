@@ -2,18 +2,18 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="bg-aula-dark py-10 text-white">
-    <div class="container">
+<footer class="py-10">
+    <div class="container w-screen">
         <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div>
                 <h3
                     class="font-display mb-4 flex items-center text-xl font-bold"
                 >
-                    <span class="text-aula-green">Gimnasio Infantil</span>
+                    <span class="">Gimnasio Infantil</span>
                     <span class="mx-2">|</span>
-                    <span class="text-aula-pink">Aula Mágica</span>
+                    <span class="text-primary">Aula Mágica</span>
                 </h3>
-                <p class="max-w-xs text-sm text-gray-300">
+                <p class="max-w-xs text-sm">
                     Jardín infantil con enfoque en valores cristianos y método
                     Montessori, donde formamos niños felices, seguros y
                     preparados para el futuro.
@@ -34,7 +34,7 @@ const currentYear = new Date().getFullYear();
                             <li>
                                 <a
                                     href={`#${item.toLowerCase()}`}
-                                    class="hover:text-aula-green text-gray-300 transition-colors"
+                                    class="hover:text-aula-green transition-colors"
                                 >
                                     {item}
                                 </a>
@@ -46,7 +46,7 @@ const currentYear = new Date().getFullYear();
 
             <div>
                 <h4 class="mb-4 text-lg font-medium">Horario de atención</h4>
-                <p class="mb-2 text-gray-300">Lunes a Viernes:</p>
+                <p class="mb-2">Lunes a Viernes:</p>
                 <p class="mb-4 font-medium text-white">7:00 am - 5:00 pm</p>
 
                 <h4 class="mb-2 text-lg font-medium">Teléfono</h4>
