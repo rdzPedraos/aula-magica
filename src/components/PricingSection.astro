@@ -110,11 +110,11 @@ const additionals = [
                         <div
                             class={`${plan.color} bg-opacity-30 px-4 pt-6 pb-6 text-center`}
                         >
-                            <h3 class="font-display text-aula-dark text-2xl font-bold">
+                            <h3 class="font-display text-2xl font-bold">
                                 {plan.title}
                             </h3>
                             <div class="mt-4 mb-2">
-                                <span class="text-aula-dark text-4xl font-bold">
+                                <span class="text-4xl font-bold">
                                     {plan.price}
                                 </span>
                                 <span class="text-gray-600">/mes</span>
@@ -159,9 +159,7 @@ const additionals = [
         </div>
 
         <div class="mx-auto max-w-4xl rounded-xl bg-gray-50 p-6 md:p-8">
-            <h3
-                class="font-display text-aula-dark mb-6 text-center text-2xl font-bold"
-            >
+            <h3 class="font-display mb-6 text-center text-2xl font-bold">
                 Servicios Adicionales
             </h3>
 
@@ -170,10 +168,8 @@ const additionals = [
                     additionals.map((item) => (
                         <div class="rounded-lg bg-white p-5 shadow-md transition-shadow hover:shadow-lg">
                             <div class="mb-3 flex items-center justify-between">
-                                <h4 class="text-aula-dark text-lg font-bold">
-                                    {item.title}
-                                </h4>
-                                <span class="text-aula-dark text-lg font-bold">
+                                <h4 class="text-lg font-bold">{item.title}</h4>
+                                <span class="text-lg font-bold">
                                     {item.price}
                                     <span class="text-sm text-gray-600">
                                         /mes
