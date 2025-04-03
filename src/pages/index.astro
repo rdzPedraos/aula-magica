@@ -21,3 +21,31 @@ import Footer from '@/sections/Footer.astro';
     </main>
     <Footer />
 </Layout>
+
+<style is:global>
+    [class*='animate-'] {
+        animation-play-state: paused;
+    }
+
+    .animate-running {
+        animation-play-state: running;
+    }
+</style>
+
+<script>
+    /* script to add the animate-running class to the elements when they are in the viewport */
+
+    const animation_observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-running');
+                animation_observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    const elements = document.querySelectorAll('[class*="animate-"]');
+    elements.forEach((element) => {
+        animation_observer.observe(element);
+    });
+</script>

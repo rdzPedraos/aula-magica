@@ -1,12 +1,11 @@
 @import 'tailwindcss';
-@layer theme, base, components, utilities;
+
 @plugin "@midudev/tailwind-animations";
 
 @theme {
     --color-primary: #a54b1b;
     --color-secondary: #a54b1b;
     --color-black: #3d3d3d;
-    --color-white: #f5f5f5;
 
     /* Colores personalizados para el jardín infantil */
     --color-aula-green: #a8e6cf;
@@ -14,10 +13,6 @@
     --color-aula-blue: #d3e4fd;
     --color-aula-pink: #ffdee2;
     --color-aula-purple: #e5deff;
-
-    /* Animaciones */
-    --animation-float: float 3s ease-in-out infinite;
-    --animation-bounce: bounce 1s infinite;
 
     /* Asegurar que las clases de color Tailwind funcionen con nuestros colores personalizados */
     --color-blue-600: #2563eb;
@@ -32,27 +27,6 @@
 body {
     color: var(--color-black);
     background-color: var(--color-white);
-}
-
-/* Definición de keyframes */
-@keyframes float {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-@keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px);
-    }
 }
 
 @utility btn {
@@ -109,14 +83,6 @@ body {
 
 /* Utilidades personalizadas */
 @layer utilities {
-    .animate-float {
-        animation: var(--animation-float);
-    }
-
-    .animate-bounce {
-        animation: var(--animation-bounce);
-    }
-
     .text-aula-green {
         color: var(--color-aula-green);
     }
